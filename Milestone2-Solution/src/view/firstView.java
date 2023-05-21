@@ -22,12 +22,17 @@ import java.io.File;
 
 public class firstView extends Application {
 
+    public static Stage window ;
+
+    private secondView  secondViewScene = new secondView();
+
     public static void main(String[] args) {
         launch(args);
     }
 
 
     public void start(Stage primaryStage){
+        window = primaryStage ;
         Group root = new Group();
         Scene s = new Scene(root,700,394);
         primaryStage.setScene(s);
@@ -38,6 +43,7 @@ public class firstView extends Application {
         imgview.setImage(img);
         s.setFill(Color.BLACK);
         Button b1= new Button("START GAME");
+        b1.setOnAction(e -> window.setScene(secondViewScene.getSecondView()));
         b1.setLayoutX(50);
         b1.setLayoutY(100);
         b1.setMinHeight(50);
@@ -69,11 +75,7 @@ public class firstView extends Application {
             primaryStage.close();
         });
         b2.setTextFill(Paint.valueOf("Black"));
-        /*String musicFile = "audio.mp3";
 
-        Media sound = new Media(new File(musicFile).toURI().toString());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();*/
 
 
         root.getChildren().addAll(imgview,b1,b2);

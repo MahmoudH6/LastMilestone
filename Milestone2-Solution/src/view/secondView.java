@@ -11,24 +11,24 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class secondView extends Application {
+public class secondView {
 
-    public static void main(String[] args) {
-        launch(args);
+
+    private  Scene secondView;
+
+
+    public Scene getSecondView() {
+        return secondView;
     }
 
-    @Override
-    public void start(Stage primaryStage) {
+    public secondView(){
         Group root =new Group();
-        primaryStage.getIcons().add(new Image("view/icon.png"));
-        primaryStage.setTitle("The Last Of Us - Legacy");
-        Scene s=new Scene(root,800,600, Paint.valueOf("Bisque") );
         Text t= new Text("PICK YOUR HERO");
         t.setFont(Font.font("Impact",40));
         t.setLayoutX(260);
         t.setLayoutY(70);
-        primaryStage.setScene(s);
         root.getChildren().addAll(t);
-        primaryStage.show();
+        secondView=new Scene(root,800,600, Paint.valueOf("Bisque") );
     }
+
 }
