@@ -19,12 +19,16 @@ import javafx.stage.Stage;
 
 import javax.print.attribute.standard.Media;
 import java.io.File;
+import java.io.IOException;
 
 public class firstView extends Application {
 
     public static Stage window ;
 
     private secondView  secondViewScene = new secondView();
+
+    public firstView() throws IOException {
+    }
 
     public static void main(String[] args) {
         launch(args);
@@ -34,7 +38,7 @@ public class firstView extends Application {
     public void start(Stage primaryStage){
         window = primaryStage ;
         Group root = new Group();
-        Scene s = new Scene(root,700,394);
+        Scene s = new Scene(root,800,394);
         primaryStage.setScene(s);
         primaryStage.getIcons().add(new Image("view/icon.png"));
         primaryStage.setTitle("The Last Of Us - Legacy");
