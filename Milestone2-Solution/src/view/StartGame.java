@@ -1,9 +1,15 @@
 package view;
+import engine.Game;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Paint;
 
-public class StartGame {
+import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
+
+public class StartGame extends Exception{
+
     private Scene startGameScene ;
 
     public Scene getstartGameScene() {
