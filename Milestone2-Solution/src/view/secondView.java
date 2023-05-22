@@ -6,8 +6,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import model.characters.Fighter;
 import model.characters.Hero;
@@ -27,10 +30,12 @@ public class secondView {
         return secondView;
     }
 
-    public secondView() throws IOException {
+    public secondView() throws Exception {
         Group root =new Group();
         Text t= new Text("PICK YOUR HERO");
-        t.setFont(Font.font("Impact",40));
+        t.setFont(Font.font("Impact", FontWeight.BOLD, FontPosture.REGULAR,40));
+        t.setFill(Color.rgb(25,25,112));
+        t.setUnderline(true);
         t.setLayoutX(360);
         t.setLayoutY(70);
         root.getChildren().addAll(t);
@@ -40,7 +45,7 @@ public class secondView {
         heroesPane.setVgap(150);
         heroesPane.setLayoutY(200);
         root.getChildren().addAll(heroesPane);
-        Game.loadHeroes("E:/CS 4/Milestone2-Solution/Milestone2-Solution/Heroes.csv");
+        Game.loadHeroes("C://Users//ISD//OneDrive//Desktop//Eng. Ali//LastMilestone//Milestone2-Solution//Heroes.csv");
         Button [] heroesButtons = new Button[Game.availableHeroes.size()] ;
         for (int i = 0 ; i< Game.availableHeroes.size() ; i++){
             Hero h = Game.availableHeroes.get(i) ;
@@ -52,8 +57,10 @@ public class secondView {
                     "Type : " + type + "\n" +
                     "Actions available : " + h.getMaxActions() + "\n" +
                     "Attack Damage : "+ h.getAttackDmg()) ;
+
             heroesButtons[i] = heroSpecs ;
             heroesPane.getChildren().addAll(heroSpecs) ;
+
         }
 
         heroesButtons[0].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{

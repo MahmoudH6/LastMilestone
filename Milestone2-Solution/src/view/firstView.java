@@ -10,11 +10,14 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Background;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 
 
 import javax.print.attribute.standard.Media;
@@ -29,15 +32,14 @@ public class firstView extends Application {
 
 
 
-    public firstView() throws IOException {
+    public firstView() throws Exception {
     }
 
     public static void main(String[] args) {
         launch(args);
     }
 
-
-    public void start(Stage primaryStage){
+    public void start(Stage primaryStage) throws Exception{
         window = primaryStage ;
         Group root = new Group();
         Scene s = new Scene(root,1000,600);
@@ -88,5 +90,8 @@ public class firstView extends Application {
 
         root.getChildren().addAll(imgview,b1,b2);
         primaryStage.show();
+    }
+
+    public void stop() throws Exception {
     }
 }
