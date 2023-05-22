@@ -47,11 +47,12 @@ public class secondView {
             h.getActionsAvailable() ;
             h.getAttackDmg() ;
             Button heroSpecs = new Button("Name : " + h.getName() + "\n" +
-                                        "Actions available : " + h.getMaxActions() + "\n" +
-                                        "Attack Damage : "+ h.getAttackDmg()) ;
+                    "Actions available : " + h.getMaxActions() + "\n" +
+                    "Attack Damage : "+ h.getAttackDmg()) ;
 
             heroesPane.getChildren().addAll(heroSpecs) ;
         }
     }
 
 }
+
