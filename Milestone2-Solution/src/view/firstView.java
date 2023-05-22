@@ -25,7 +25,9 @@ public class firstView extends Application {
 
     public static Stage window ;
 
-    private secondView  secondViewScene = new secondView();
+    private secondView secondViewScene = new secondView();
+
+
 
     public firstView() throws IOException {
     }

@@ -18,8 +18,9 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class secondView {
 
-
+    public Hero chosenHero ;
     private  Scene secondView;
+    private StartGame StartGame = new StartGame() ;
 
 
     public Scene getSecondView() {
@@ -30,7 +31,7 @@ public class secondView {
         Group root =new Group();
         Text t= new Text("PICK YOUR HERO");
         t.setFont(Font.font("Impact",40));
-        t.setLayoutX(260);
+        t.setLayoutX(360);
         t.setLayoutY(70);
         root.getChildren().addAll(t);
         secondView=new Scene(root,1000,600, Paint.valueOf("Bisque") );
@@ -56,36 +57,36 @@ public class secondView {
         }
 
         heroesButtons[0].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-           Hero chosenHero = Game.availableHeroes.get(0) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+           chosenHero = Game.availableHeroes.get(0) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[1].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(1) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(1) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[2].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(2) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(2) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[3].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(3) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(3) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[4].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(4) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(4) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[5].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(5) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(5) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[6].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(6) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(6) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
         heroesButtons[7].addEventHandler(MouseEvent.MOUSE_CLICKED,(MouseEvent e) ->{
-            Hero chosenHero = Game.availableHeroes.get(7) ;
-            System.out.println(chosenHero.getMaxActions() + " " + chosenHero.getName() + " " + chosenHero.getMaxHp());
+            chosenHero = Game.availableHeroes.get(7) ;
+            firstView.window.setScene(StartGame.getstartGameScene());
         });
 
     }
