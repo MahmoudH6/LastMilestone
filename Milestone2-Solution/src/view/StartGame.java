@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-public class StartGame extends Exception{
+public class StartGame extends Component {
 
     private Scene startGameScene ;
 
@@ -17,6 +17,13 @@ public class StartGame extends Exception{
     }
 
     public StartGame(){
+        try {
+            Game.loadHeroes("C:/Users/ISD/OneDrive/Desktop/Eng. Ali/LastMilestone/Milestone2-Solution/Heroes.csv");
+        }
+        catch (IOException e){
+            JOptionPane.showMessageDialog(this,"Error,There are no available Heroes");
+            return;
+        }
         Group root =new Group();
         startGameScene =new Scene(root,1800,900, Paint.valueOf("Bisque") );
     }
