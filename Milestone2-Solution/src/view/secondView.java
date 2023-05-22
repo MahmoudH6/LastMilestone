@@ -4,6 +4,8 @@ import engine.Game;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Color;
@@ -38,8 +40,13 @@ public class secondView {
         t.setUnderline(true);
         t.setLayoutX(360);
         t.setLayoutY(70);
-        root.getChildren().addAll(t);
-        secondView=new Scene(root,1000,600, Paint.valueOf("Bisque") );
+        /*ImageView imgview = new ImageView();
+        Image img =new Image(getClass().getResourceAsStream("image1.jpg"));
+        imgview.setFitWidth(1000);
+        imgview.setFitHeight(600);
+        imgview.setImage(img);
+         */
+        secondView = new Scene(root,1000,600);
         TilePane heroesPane = new TilePane() ;
         heroesPane.setHgap(10);
         heroesPane.setVgap(150);
@@ -47,6 +54,7 @@ public class secondView {
         root.getChildren().addAll(heroesPane);
         Game.loadHeroes("C://Users//ISD//OneDrive//Desktop//Eng. Ali//LastMilestone//Milestone2-Solution//Heroes.csv");
         Button [] heroesButtons = new Button[Game.availableHeroes.size()] ;
+        root.getChildren().addAll(t);
         for (int i = 0 ; i< Game.availableHeroes.size() ; i++){
             Hero h = Game.availableHeroes.get(i) ;
             h.getName();
