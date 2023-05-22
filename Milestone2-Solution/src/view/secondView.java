@@ -9,7 +9,10 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import model.characters.Fighter;
 import model.characters.Hero;
+import model.characters.Medic;
+
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -43,7 +46,9 @@ public class secondView {
             h.getName();
             h.getActionsAvailable() ;
             h.getAttackDmg() ;
+            String type = (h instanceof Fighter)? "Fighter" :(h instanceof Medic)? "Medic" : "Explorer" ;
             Button heroSpecs = new Button("Name : " + h.getName() + "\n" +
+                    "Type : " + type + "\n" +
                     "Actions available : " + h.getMaxActions() + "\n" +
                     "Attack Damage : "+ h.getAttackDmg()) ;
             heroesButtons[i] = heroSpecs ;
